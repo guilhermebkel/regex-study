@@ -10,7 +10,7 @@ Example:
 
 ## Flags
 
-Flags can be used to specify how the pattern match will actually work. Per example if the match has to work on all the text or even if it is case sensitive or not.
+Flags can be used to specify how the pattern match will actually work. Per example if the match has to work all around the text or even if it is case sensitive or not.
 
 ```js
 /**
