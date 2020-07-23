@@ -27,7 +27,7 @@ const text = "Mota signed the document."
  * 
  * Will only match ["M"] (was supposed to find "M,m" or "do")
  * since the global flag is not specified. So, after finding
- * the first, it does not try to found the other.
+ * the first, it does not try to find the other.
  */
 console.log(text.match(/M|do/))
 console.log(text.match(/m|do/i))
