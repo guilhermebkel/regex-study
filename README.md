@@ -40,3 +40,24 @@ console.log(text.match(/m|do/i))
  */
 console.log(text.match(/m|do/gi))
 ```
+
+## Observations (characters)
+
+1. When working with multiple lined text, it is important to use **back** (`) on string.
+
+```js
+const multipleLinedText = `
+	a beautiful line.
+	another great line.
+`
+```
+
+2. Watch out the use of **tab**, since **tab** and **spaces** have a different way to be matched.
+
+```js
+const tab = '	'
+console.log(tab.match(/\s/g)) // ['\t']
+
+const space = ' '
+console.log(space.match(/\s/g)) // [' ']
+```
