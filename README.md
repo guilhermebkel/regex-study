@@ -41,6 +41,32 @@ console.log(text.match(/m|do/i))
 console.log(text.match(/m|do/gi))
 ```
 
+## Meta-characters
+
+We can use meta-characters to make custom matches using some regex pattern. Below you're able to see examples of meta-characters:
+
+#### Representatives
+- **.** (point) - any character
+- **[ ]** (group) - a group of permitted characters
+- **[^]** (negated group) - a group of non permitted characters
+
+#### Quantifiers
+- **?** (optional) - 0 or 1 character
+- **‎‎*‎** (asterisk) - 0 or more characters
+- **+** (plus) - 1 or more characters
+- **{n,m}** (keys) - from *n* to *m*
+
+#### Anchors
+- **^** (circumflex) - init of line
+- **$** (sign) - end of line
+- **\b** (border) - init or end of word
+
+#### Others
+- **‎\‎** (scape) - use meta-characters as literal character
+- **‎|‎** (or) - *or* operation
+- **‎( )‎** (group) - defines a group
+- **‎\1...\9‎** (retriever) - gets already used groups
+
 ## Observations (characters)
 
 1. When working with multiple lined text, it is important to use **back** (`) on string.
