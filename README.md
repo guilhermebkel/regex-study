@@ -87,3 +87,11 @@ console.log(tab.match(/\s/g)) // ['\t']
 const space = ' '
 console.log(space.match(/\s/g)) // [' ']
 ```
+
+3. We're able to match blank spaces by using **\s** instead of using the real character.
+```js
+const tab = '	'
+
+console.log(tab.match(/\t/g)) // ['\t']
+console.log(tab.match(/\s/g)) // ['\t']
+```
