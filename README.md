@@ -67,6 +67,22 @@ We can use meta-characters to make custom matches using some regex pattern. Belo
 - **‎( )‎** (group) - defines a group
 - **‎\1...\9‎** (retriever) - gets already used groups
 
+## Unicode
+
+By using unicode encoding, we're able to use the amount of bytes we need, so it helps getting more and more characters mapped.
+
+Nowadays we have more than 100k mapped characters that can be found at the [Unicode Table](https://unicode-table.com/).
+
+In order to match unicode values, we need to use **\u** before its code.
+
+```js
+const text = "aʬc௵d"
+
+const matchUnicode = /\u02AC|\u0BF5/g
+
+console.log(text.match(matchUnicode)) // ['ʬ', '௵']
+```
+
 ## Observations (characters)
 
 1. When working with multiple lined text, it is important to use **back** (`) on string.
