@@ -95,3 +95,12 @@ const tab = '	'
 console.log(tab.match(/\t/g)) // ['\t']
 console.log(tab.match(/\s/g)) // ['\t']
 ```
+
+4. Dot does not match **\n**.
+```js
+const text = "Bom\nDia"
+console.log(text.match(/..../gi)) // null
+
+const text = "Bom\tDia"
+console.log(text.match(/..../gi)) // ['Bom\t']
+```
