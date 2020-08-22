@@ -83,8 +83,9 @@ const matchUnicode = /\u02AC|\u0BF5/g
 console.log(text.match(matchUnicode)) // ['ʬ', '௵']
 ```
 
-## Observations (characters)
+## Observations
 
+### Characters
 1. When working with multiple lined text, it is important to use **back** (`) on string.
 
 ```js
@@ -120,3 +121,30 @@ console.log(text.match(/..../gi)) // null
 const text = "Bom\tDia"
 console.log(text.match(/..../gi)) // ['Bom\t']
 ```
+
+### Ranges
+
+1. You must use **[ ]** if you want to match a range.
+
+```js
+const text = "ABC [abc] a-c 1234"
+
+console.log(text.match(/[a-c]/g)) // ['a', 'b', 'c', 'a', 'c']
+console.log(text.match(/a-c/g)) // ['a-c']
+```
+
+2. Watch out the way you write the range, since it is based on the UNICODE table.
+
+```js
+const text = "ABC [abc] a-c 1234"
+
+console.log(text.match(/[A-z]/g)) // ['A', 'B', 'C', '[', 'a', 'b', 'c', ']', 'a', 'c']
+ ```
+
+3. The range must be written in ascending order.
+
+```js
+const text = "ABC [abc] a-c 1234"
+
+console.log(text.match(/[4-1]/g)) // Error
+ ```
