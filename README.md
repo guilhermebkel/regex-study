@@ -83,6 +83,46 @@ const matchUnicode = /\u02AC|\u0BF5/g
 console.log(text.match(matchUnicode)) // ['ʬ', '௵']
 ```
 
+## Shorthands
+
+In order to get our Regular Expression smaller, we can use **shorthands** in order to match a group of pre-defined characters.
+
+- **\d** - matches all numbers *([0-9])*
+
+- **\D** - matches everything but numbers *([^0-9])*
+
+- **\w** - matches numbers, letters and underline *([a-zA-Z0-9_])*
+
+- **\w** - matches everything but characters *([^a-zA-Z0-9_])*
+
+- **\s** - matches blank spaces *([ \t\n\r\f])*
+
+- **\S** - matches everything but blank spaces *([^ \t\n\r\f])*
+
+```js
+const text = `1,2,3,4,5,6,a.b c!d?e	-
+f_g
+`
+
+const matchNumbers = /\d/g
+console.log(text.match(matchNumbers)) // ['1', '2', '3', '4', '5', '6']
+
+const matchNotNumbers = /\D/g
+console.log(text.match(matchNotNumbers)) // [',', ',', ',', ',', ',', ',', 'a', '.', 'b', ' ', 'c', '!', 'd', '?', 'e', '\t', '-', '\n', 'f', '_', 'g']
+
+const matchNumbersLettersAndUnderline = /\w/g
+console.log(text.match(matchNumbersLettersAndUnderline)) // ['1', '2', '3', '4', '5', '6', 'a', 'b', 'c', 'd', 'e', 'f', '_', 'g']
+
+const matchEverythingButCharacters = /\W/g
+console.log(text.match(matchEverythingButCharacters)) // [',', ',', ',', ',', ',', ',', '.', ' ', '!', '?', '\t', '-', '\n']
+
+const matchBlankSpaces = /\s/g
+console.log(text.match(matchBlankSpaces)) // ['', '\r', '\t', '\n']
+
+const matchEverythingButBlankSpaces = /\S/g
+console.log(text.match(matchEverythingButBlankSpaces)) // ['1', ',', '2', ',', '3', ',', '4', ',', '5', ',', '6', ',', 'a', '.', 'b', 'c', '!', 'd', '?', 'e', '-', 'f', '_', 'g']
+```
+
 ## Observations
 
 ### Characters
