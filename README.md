@@ -188,3 +188,17 @@ const text = "ABC [abc] a-c 1234"
 
 console.log(text.match(/[4-1]/g)) // Error
  ```
+
+### Quantifiers
+
+1. When you use a **+** after a group, it will try to search for all elements together, instead of one by one.
+
+```js
+const text = "Os números 0123456789."
+
+const allNumbersSeparated = /[0-9]/g
+console.log(text3.match(allNumbersSeparated)) // ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+const allNumbersTogether = /[0-9]+/g
+console.log(text3.match(allNumbersTogether)) // ['0123456789']
+```
