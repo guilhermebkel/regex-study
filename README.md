@@ -202,3 +202,21 @@ console.log(text3.match(allNumbersSeparated)) // ['0', '1', '2', '3', '4', '5', 
 const allNumbersTogether = /[0-9]+/g
 console.log(text3.match(allNumbersTogether)) // ['0123456789']
 ```
+
+2. Be aware that the quantifiers can have **greedy** or **lazy** type.
+
+```js
+const html = "<div>Conteudo 01</div><div>Conteudo 02</div>"
+
+/**
+ * Greedy - Try to match everything possible together.
+ */
+const allContentsTogether = /<div>.+<\/div>/g
+console.log(html.match(allContentsTogether)) // [ '<div>Conteudo 01</div><div>Conteudo 02</div>' ]
+
+/**
+ * Lazy - Try to match one by one.
+ */
+const allContentsSeparated = /<div>.+?<\/div>/g
+console.log(html.match(allContentsSeparated)) // [ '<div>Conteudo 01</div>', '<div>Conteudo 02</div>' ]
+```
