@@ -65,7 +65,7 @@ We can use meta-characters to make custom matches using some regex pattern. Belo
 - **‎\‎** (scape) - use meta-characters as literal character
 - **‎|‎** (or) - *or* operation
 - **‎( )‎** (group) - defines a group
-- **‎\1...\9‎** (retriever) - gets already used groups
+- **‎\1...\9‎** (rearview) - gets already used groups
 
 ## Unicode
 
@@ -219,4 +219,20 @@ console.log(html.match(allContentsTogether)) // [ '<div>Conteudo 01</div><div>Co
  */
 const allContentsSeparated = /<div>.+?<\/div>/g
 console.log(html.match(allContentsSeparated)) // [ '<div>Conteudo 01</div>', '<div>Conteudo 02</div>' ]
+```
+
+### Groups
+
+1. When you use a **?:** inside a group, it will not be reachable later if you want to use a rearview.
+
+```js
+const text = "Lentamente é mente muito lenta."
+
+// [\2 - mente] [\1 - lenta]
+const reachable = /(lenta)(mente).*\2.*\1\./gi
+console.log(text.match(reachable))
+
+// [\1 - mente]
+const notReachable = /(?:lenta)(mente).*\1/gi
+console.log(text.match(reachable))
 ```
