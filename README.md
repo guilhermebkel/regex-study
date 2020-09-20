@@ -47,8 +47,8 @@ We can use meta-characters to make custom matches using some regex pattern. Belo
 
 #### Representatives
 - **.** (point) - any character
-- **[ ]** (group) - a group of permitted characters
-- **[^]** (negated group) - a group of non permitted characters
+- **[ ]** (range) - a group of permitted characters
+- **[^]** (negated range) - a group of non permitted characters
 
 #### Quantifiers
 - **?** (optional) - 0 or 1 character
@@ -242,5 +242,15 @@ console.log(text.match(reachable))
 ```js
 const text = 'abcdefghijkll'
 
-console.log(text.match(/(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)\12/g))
+const matchLetters = /(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)\12/g
+console.log(text.match(matchLetters))
+```
+
+3. Groups can not be used inside ranges
+
+```js
+const text = 'Pedrinho (filho do Pedro Silva) é doutor da ABC!'
+
+const matchABC = /[(abc)]/gi
+console.log(text.match(matchABC))
 ```
