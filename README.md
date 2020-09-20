@@ -236,3 +236,11 @@ console.log(text.match(reachable))
 const notReachable = /(?:lenta)(mente).*\1/gi
 console.log(text.match(reachable))
 ```
+
+2. Javascript supports more than 9 rearviews.
+
+```js
+const text = 'abcdefghijkll'
+
+console.log(text.match(/(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)(k)(l)\12/g))
+```
