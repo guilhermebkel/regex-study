@@ -16,9 +16,15 @@ Flags can be used to specify how the pattern match will actually work. Per examp
 /**
  * g - find all patterns globally
  * i - w/o case sensitive
+ * m - match multilined text (matches line by line by itself)
  */
 
-const text = "Mota signed the document."
+const text1 = "Mota signed the document."
+const text2 = `
+Leo é muito legal
+Emanuel foi jogar em Sergipe
+Bianca é casada com Habib
+`
 
 /**
  * Regex: 
@@ -29,8 +35,8 @@ const text = "Mota signed the document."
  * since the global flag is not specified. So, after finding
  * the first, it does not try to find the other.
  */
-console.log(text.match(/M|do/))
-console.log(text.match(/m|do/i))
+console.log(text1.match(/M|do/))
+console.log(text1.match(/m|do/i))
 
 /**
  * Regex:
@@ -38,7 +44,15 @@ console.log(text.match(/m|do/i))
  * 
  * Will match ["M", "do"]
  */
-console.log(text.match(/m|do/gi))
+console.log(text1.match(/m|do/gi))
+
+/**
+ * Regex:
+ * 	- /^(\w).+\1$/gim
+ * 
+ * Will match ["Leo é muito legal", "Emanuel foi jogar em Sergipe", "Bianca é casada com Habib"]
+ */
+console.log(text2.match(/^(\w).+\1$/gim))
 ```
 
 ## Meta-characters
