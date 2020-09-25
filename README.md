@@ -83,6 +83,20 @@ const matchUnicode = /\u02AC|\u0BF5/g
 console.log(text.match(matchUnicode)) // ['ʬ', '௵']
 ```
 
+## Dotall
+
+Since in Javascript the symbol **.** does not match **\n**, we have to make the following change on our regex in order to include it if needed:
+
+```js
+const text = "hello\n my friend"
+
+const failingRegex = /^h.*d$/g
+console.log(text.match(failingRegex)) // null
+
+const dotallRegex = /^h[\s\S]*d$/g
+console.log(text.match(dotallRegex)) // ["hello\n my friend"]
+```
+
 ## Shorthands
 
 In order to get our Regular Expression smaller, we can use **shorthands** in order to match a group of pre-defined characters.
