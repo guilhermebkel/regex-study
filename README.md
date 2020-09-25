@@ -254,3 +254,19 @@ const text = 'Pedrinho (filho do Pedro Silva) é doutor da ABC!'
 const matchABC = /[(abc)]/gi
 console.log(text.match(matchABC))
 ```
+
+### Groups
+
+1. We're able to make simple matches on borders with some existent symbols.
+
+```js
+const text = "Romário era um excelente jogador\n, mas hoje é um político questionador"
+
+// ^ - start of string/line
+const matchFirstR = /^r/gi
+console.log(text.match(matchFirstR))
+
+// $ - end of string/line
+const matchLastR = /r$/gi
+console.log(text.match(matchLastR))
+```
