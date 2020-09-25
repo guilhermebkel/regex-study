@@ -298,3 +298,11 @@ console.log(text.match(matchFirstR))
 const matchLastR = /r$/gi
 console.log(text.match(matchLastR))
 ```
+
+1. Be aware that when your using borders, letters with accent are matched.
+
+Since a **border** is everything that is not **\w** (Ex: [^A-Za-z0-9_]...), it matches letters with accent.
+
+So, per example, the following letters are considered to be borders:
+- **ê, í, ã, ú**, ...
+
