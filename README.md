@@ -121,7 +121,7 @@ In order to get our Regular Expression smaller, we can use **shorthands** in ord
 
 - **\w** - matches numbers, letters and underline *([a-zA-Z0-9_])*
 
-- **\w** - matches everything but characters *([^a-zA-Z0-9_])*
+- **\W** - matches everything but characters *([^a-zA-Z0-9_])*
 
 - **\s** - matches blank spaces *([ \t\n\r\f])*
 
